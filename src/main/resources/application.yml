@@ -27,7 +27,7 @@ spring:
           filters:
             - name: RequestRateLimiter
               args:
-                key-resolver: '#{@hostAddrKeyResolver}'
+                key-resolver: '#{@uriKeyResolver}'
                 redis-rate-limiter.replenishRate: 2
                 redis-rate-limiter.burstCapacity: 5
             - RewritePath=/api-c/(?<segment>.*), /$\{segment}
